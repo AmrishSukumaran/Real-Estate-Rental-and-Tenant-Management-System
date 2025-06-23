@@ -26,7 +26,6 @@ Steps to Build and Run application in Docker
 
 To run the Docker image, use the following command:
 
-
-  docker run -p 5000:5000 real-estate-full
+     docker run -p 5000:5000 real-estate-full
 
 Navigate to http://localhost 

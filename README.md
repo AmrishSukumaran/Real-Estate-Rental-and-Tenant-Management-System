@@ -29,3 +29,11 @@ To run the Docker image, use the following command:
      docker run -p 5000:5000 real-estate-full
 
 Navigate to http://localhost 
+
+
+
+
+Sample Screenshots:
+
+![image](https://github.com/user-attachments/assets/e264f76e-33f7-4600-ace4-c259168c41e3)
+

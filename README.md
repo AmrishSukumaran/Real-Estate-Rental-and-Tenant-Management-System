@@ -1,100 +1,32 @@
 # Real Estate Rental and Tenant Management System - Property Plus
 
-Property Plus is a real estate rental and tenant management system. It is a web application that allows two types of users to use the application. The two types of users are the owner and the tenant. The owner can post a property for rent, manage tenants, register rent payment, and create a property contract. The tenant can search and filter properties, view property details, send an email to the owner of the property, and use the built-in chat application for communication between the owner and the tenant.
+Property Plus is a real estate rental and tenant management system.t.
 
-Live Site - [Property Plus](https://property-plus.onrender.com/)
+1.Back-end (server/) — built with Node.js and Express; handles authentication (JWT), user roles (owner vs tenant), property listings, rent payments, contracts, chat, email notifications, etc.
+2.Front-end (client/) — a React/Vite app where:
 
-## Features
+-Property owners can list and manage properties, tenants, contracts, and payments.
 
-- Post a property for rent
-- Search and filter properties
-- View property details
-- Built-in Chat Application for communication between owner and tenant
-- Secure JWT authentication using access and refresh tokens
-- Send emails between owner and tenant
-- Create Property Contract
-- Manage tenants
-- Register Rent Payment
+-Tenants can browse/filter listings, view details, message owners, and send emails.
 
-## Configuration and Installation Instructions
 
-### Prerequisites
+Steps to Build and Run application in Docker
 
-- [Node.js](https://nodejs.org/en/download/)
-- [React.js](https://facebook.github.io/react/)
-- [npm](https://www.npmjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Cloudinary](https://cloudinary.com/)
-- [Ethereal Email](https://ethereal.email/)
+1. Create a Docker file
 
-1. Clone the repository:
+    Sample Docker file is available in this repo
 
-```bash
-$ git clone https://github.com/SonamRinzinGurung/Real-Estate-Rental-and-Tenant-Management-System.git
-```
+ 2.Build a Docker Image
 
-2. Install the required packages for the backend:
+ To build the Docker image, run the following command in your terminal:
+ 
+     docker build -t real-estate-full .
 
-```bash
-$ cd server
-$ npm install
-```
+ 3. Run Application
 
-3. Open a new terminal session and install the required packages for the frontend:
+To run the Docker image, use the following command:
 
-```bash
-$ cd client
-$ npm install
-```
 
-4. Configure the environment variables inside the server folder:
+  docker run -p 5000:5000 real-estate-full
 
-```bash
-
-- create a .env file and add the following variables:
-- generate secret keys for jwt tokens using online tools
-
-MONGO_URI= <your_mongo_uri>
-ACCESS_TOKEN_SECRET_OWNER= <your_access_token_secret_owner>
-ACCESS_TOKEN_SECRET_TENANT= <your_access_token_secret_tenant>
-REFRESH_TOKEN_SECRET_OWNER= <your_refresh_token_secret_owner>
-REFRESH_TOKEN_SECRET_TENANT= <your_refresh_token_secret_tenant>
-ACCESS_LIFETIME=15m
-REFRESH_LIFETIME=7d
-CLOUDINARY_CLOUD_NAME=<your_cloudinary_cloud_name>
-CLOUDINARY_API_KEY= <your_cloudinary_api_key>
-CLOUDINARY_API_SECRET= <your_cloudinary_api_secret>
-RESET_PASSWORD_KEY= <your_reset_password_key>
-EMAIL_VERIFICATION_KEY= <your_email_verification_key>
-CLIENT_URL=http://localhost:3000
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER= <your_gmail_address>
-EMAIL_PASS= <your_gmail_pass> or <your_gmail_app_password>
-```
-
-5. Configure the environment variables inside the client folder:
-
-```bash
-
-- create a .env.local file and add the following variables:
-
-VITE_APP_BASE_URL=http://localhost:3000
-VITE_APP_API_URL=http://localhost:5000/api
-VITE_APP_API_HOST=http://localhost:5000
-```
-
-6. Run the application:
-
-```bash
-$ cd server
-$ npm run dev
-```
-*** 
-### Author
-
-[Sonam Rinzin Gurung](https://www.linkedin.com/in/sonam-rinzin-gurung-59060b211/)
-
-### Repository
-
-[Property Plus](https://github.com/SonamRinzinGurung/Real-Estate-Rental-and-Tenant-Management-System)
+Navigate to http://localhost 
